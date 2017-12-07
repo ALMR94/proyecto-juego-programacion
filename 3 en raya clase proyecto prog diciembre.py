@@ -191,8 +191,7 @@ def tres_en_raya_maquina():
     print " -"*6
     print "|",tableroins[3],"|",tableroins[4],"|",tableroins[5],"|"
     print " -"*6
-    print "|",tableroins[6],"|",tableroins[7],"|",tableroins[8],"|"
-    print " -"*6
+    print "|",tableroins[6],"|",tableroins[7],"|",tableroins[8],"|"    print " -"*6
  
     # bucle; movimientos 5 humano (empieza) 4 maquina
     for turno in range(1,6):
@@ -249,6 +248,6 @@ def elige_opcion():
     elif opcion == 2:
         tres_en_raya_maquina()
     else:
-		print "Esa opción no existe. Elige 1 o 2."
-		elige_opcion()
+	print "Esa opción no existe. Elige 1 o 2."
+	elige_opcion()
 elige_opcion()
