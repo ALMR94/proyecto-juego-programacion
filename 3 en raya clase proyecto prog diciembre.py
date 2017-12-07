@@ -1,6 +1,6 @@
 # -*- coding: cp1252 -*-
 def tres_en_raya():
-    #Estos son los números que salen en el tablero.
+    #Estos son los nÃºmeros que salen en el tablero.
     tablero = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     fin = False
     #Estas son las combinaciones que dan la victoria.
@@ -22,7 +22,7 @@ def tres_en_raya():
     def p1():
         n = elige_numero()
         if tablero[n] == "X" or tablero[n] == "O":
-            print("\nNo puedes poner tu ficha ahí­. Intentalo otra vez.")
+            print("\nNo puedes poner tu ficha ahÃ­Â­. Intentalo otra vez.")
             p1()
         else:
             tablero[n] = "X"
@@ -31,11 +31,11 @@ def tres_en_raya():
     def p2():
         n = elige_numero()
         if tablero[n] == "X" or tablero[n] == "O":
-            print("\nNo puedes poner nada ahí ya. Intentalo otra vez.")
+            print("\nNo puedes poner nada ahÃ­ ya. Intentalo otra vez.")
             p2()
         else:
             tablero[n] = "O"
-    #Esta función valida si el número introdcido por J1 o J2 es válido.
+    #Esta funciÃ³n valida si el nÃºmero introdcido por J1 o J2 es vÃ¡lido.
     def elige_numero():
         while True:
             while True:
@@ -46,27 +46,27 @@ def tres_en_raya():
                     if a in range(0, 9):
                         return a
                     else:
-                        print("\nEse número no está en el tablero. Intentalo otra vez.")
+                        print("\nEse nÃºmero no estÃ¡ en el tablero. Intentalo otra vez.")
                         continue
                 except ValueError:
-                   print("\nEso no es un número. Intentalo otra vez.")
+                   print("\nEso no es un nÃºmero. Intentalo otra vez.")
                    continue
 
-    #Finalmente, la siguiente función comprueba el tablero y comprueba si alguien ha
-    #ganado mirando en "combi_victoria", que es donde están las combinaciones
+    #Finalmente, la siguiente funciÃ³n comprueba el tablero y comprueba si alguien ha
+    #ganado mirando en "combi_victoria", que es donde estÃ¡n las combinaciones
     #de victoria posibles.
 
     def comprobar_tablero():
         conteo = 0
         for a in combi_victoria:
             if tablero[a[0]] == tablero[a[1]] == tablero[a[2]] == "X":
-                print("¡Ha ganado el jugador 1!\n")
-                print("¡Enhorabuena!\n")
+                print("Â¡Ha ganado el jugador 1!\n")
+                print("Â¡Enhorabuena!\n")
                 return True
 
             if tablero[a[0]] == tablero[a[1]] == tablero[a[2]] == "O":
-                print("¡Ha ganado el jugador 2!\n")
-                print("¡Enhorabuena!\n")
+                print("Â¡Ha ganado el jugador 2!\n")
+                print("Â¡Enhorabuena!\n")
                 return True
         for a in range(9):
             if tablero[a] == "X" or tablero[a] == "O":
@@ -75,7 +75,7 @@ def tres_en_raya():
                 print("El juego ha terminado en empate.\n")
                 return True
 
-    #Esto siguiente se ejecuta si nadie ha ganado aún.
+    #Esto siguiente se ejecuta si nadie ha ganado aÃºn.
 
     while not fin:
         dibujo()
@@ -91,10 +91,10 @@ def tres_en_raya():
         print("Jugador 2, elige un lugar en el que poner una O.")
         p2()
 
-    if raw_input("¿Quieres jugar otra vez? (s/n)\n") == "s":
+    if raw_input("Â¿Quieres jugar otra vez? (s/n)\n") == "s":
         elige_opcion()
     else:
-        print "¡Muchas gracias por jugar!"
+        print "Â¡Muchas gracias por jugar!"
         print "FIN DEL JUEGO."
 
 def tres_en_raya_maquina():
@@ -178,9 +178,9 @@ def tres_en_raya_maquina():
  
     def resultado(ganador):
         if ganador==1:
-            print "¡Enhorabuena, has ganado!"
+            print "Â¡Enhorabuena, has ganado!"
         elif ganador==2:
-            print "Acabas de perder... ¡Otra vez será!"
+            print "Acabas de perder... Â¡Otra vez serÃ¡!"
         else:
             print "El juego ha terminado en empate."
  
@@ -201,7 +201,7 @@ def tres_en_raya_maquina():
         movhuman=int(raw_input("Elige un movimiento del 1 al 9: "))
         movhuman-=1
         while movhuman>8 or movhuman<0 or tablero[movhuman]=="X" or tablero[movhuman]=="O":
-            movhuman=int(raw_input("Ese número no es correcto. Elige un número válido del 1 al 9: "))
+            movhuman=int(raw_input("Ese nÃºmero no es correcto. Elige un nÃºmero vÃ¡lido del 1 al 9: "))
             movhuman-=1
         tablero[movhuman]="X"
     
@@ -235,17 +235,20 @@ def tres_en_raya_maquina():
  
     resultado(ganador)
     
-    if raw_input("¿Quieres jugar otra vez? (s/n)\n") == "s":
+    if raw_input("Â¿Quieres jugar otra vez? (s/n)\n") == "s":
         elige_opcion()
     else:
-        print "¡Muchas gracias por jugar!"
+        print "Â¡Muchas gracias por jugar!"
         print "FIN DEL JUEGO."
 
 print "BIENVENIDO AL 3 EN RAYA DE PYTHON."
 def elige_opcion():
-    opcion=int(raw_input("Elige si quieres jugar contra otro jugador (1) o contra la máquina (2): "))
+    opcion=int(raw_input("Elige si quieres jugar contra otro jugador (1) o contra la mÃ¡quina (2): "))
     if opcion == 1:
         tres_en_raya()
     elif opcion == 2:
         tres_en_raya_maquina()
+    else:
+		print "Esa opciÃ³n no existe. Elige 1 o 2."
+		elige_opcion()
 elige_opcion()
